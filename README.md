@@ -7,7 +7,7 @@ they are versioned and always available. **Dates live in Canvas**, not in these 
 |---|---|
 | Project 1 | [projects/p1](projects/p1/README.md) |
 | Project 2: Build a REST API | [projects/p2](projects/p2/README.md) |
-| Project 3 | [projects/p3](projects/p3/README.md) |
+| Project 3: Ship a Product | [projects/p3](projects/p3/README.md) |
 
 Starter repos for each project are the `CST438_*` template repos in this org. Use **Use this template**
 on those; this repo is documentation only.
