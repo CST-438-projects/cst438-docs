@@ -1,0 +1,6 @@
+Rubric Name,Criteria Name,Criteria Description,Criteria Enable Range,Rating Name,Rating Description,Rating Points,Rating Name,Rating Description,Rating Points,Rating Name,Rating Description,Rating Points,Rating Name,Rating Description,Rating Points
+P1I2 PR Report (iteration 2),Github contribution,All links,false,Full Marks,PR merged to main at least 24 hours before class,2.0,Simple Commit or no pull request,"Made a simplistic or simple commit.
+I.e. setters and getters a few CSS/style changes",1.0,No commit,"",0.0,Not present,If you show up after the meeting you still get 0,0.0
+P1I2 PR Report (iteration 2),Issues,Issues,false,1+ & 1+,Issue associated with the closed PR is closed. New Issue is assigned,2.0,issue,Issue associated with the PR done but no new issue,1.0,No issue and doesn't know,"No issue completed, one assigned",0.5,Nothing,No issue nothing completed,0.0
+P1I2 PR Report (iteration 2),Reviewer,Reviewer must be assigned and must have actually reviewed something,false,Approved,Reviewer assigned and signed off,3.0,Assigned,Has a reviewer assigned but not approved,1.0,No reviewers,No reviewer assigned,0.0
+P1I2 PR Report (iteration 2),Tested,The work you did has a test that is passing.,false,Tests green,Meaningful unit tests written and passing,3.0,Failing Test,meaningful unit tests written not passing,1.0,No tests,no tests,0.0

@@ -1,0 +1,108 @@
+<h2><strong><u>Goal</u></strong></h2>
+<p>Practice giving a real code review on Project 02 code: a REST API and its contract. By the end of class you will have left written, actionable feedback on two pull requests belonging to students outside your team, and you will have recorded what you are going to do about the feedback you received.</p>
+<p><strong>This is a solo assignment.</strong> You do the reviews yourself and you turn in your own PDF, even though your team coordinates who reviews whom.</p>
+<h2><strong><u>What you are doing, in five steps</u></strong></h2>
+<ol>
+<li>
+<p><strong>Find your two target groups.</strong> Open the <a title="Project 02 Groups, repos, live links" href="https://csumb.instructure.com/courses/34057/pages/project-02-groups-repos-live-links" data-api-endpoint="https://csumb.instructure.com/api/v1/courses/34057/pages/project-02-groups-repos-live-links" data-api-returntype="Page">Project 02 Groups, repos, live links</a> page and look at the list of groups <strong>in your own section</strong>.</p>
+<ul>
+<li>Target A is the group numbered <strong>one above</strong> yours.</li>
+<li>Target B is the group numbered <strong>one below</strong> yours.</li>
+<li>If there is no group above or below you, <strong>wrap around</strong> to the other end of your section's list. The list is a circle, so the last group's neighbor is the first group.</li>
+</ul>
+<p><em>Worked example:</em> if your section has groups 1 through 6 and you are in group 1, your targets are group 2 (above) and group 6 (below, wrapping). If you are in group 6, your targets are group 1 (above, wrapping) and group 5 (below). Nobody reviews their own group.</p>
+</li>
+<li>
+<p><strong>Find which person you review.</strong> Sort your own group's members <strong>alphabetically by last name</strong> and find your position in that list. If you are 1st in your group, you review the 1st person in each target group (also sorted alphabetically by last name). If you are 3rd, you review the 3rd person. And so on.</p>
+<ul>
+<li>If a target group has fewer members than your position number, <strong>wrap to the top of their list.</strong> Example: you are 4th in your group and the target group only has 3 people, so you review their 1st person.</li>
+<li>This means each of your teammates reviews a different person, and it is fine if an author ends up reviewed twice.</li>
+<li>Not sure you did this right? The <a title="P2 Peer Review Pairings" href="https://csumb.instructure.com/courses/34057/pages/p2-peer-review-pairings" data-api-endpoint="https://csumb.instructure.com/api/v1/courses/34057/pages/p2-peer-review-pairings" data-api-returntype="Page">P2 Peer Review Pairings</a> page lists this term's pairings. That page is the tie-breaker if your math disagrees with it.</li>
+</ul>
+</li>
+<li>
+<p><strong>Pick one pull request per person</strong> (two PRs total, one from each target group). Open or merged is fine. Pick a PR with actual code in it (an endpoint, the auth slice, Docker, or tests), not a one-line config change or a docs-only PR. If the person has several, pick their largest recent one.</p>
+</li>
+<li>
+<p><strong>Leave your review on the pull request itself, on GitHub.</strong> This is the main deliverable. Go to the PR, open the <strong>Files changed</strong> tab, and use <strong>Review changes</strong>.</p>
+<ul>
+<li>Leave <strong>at least two comments anchored to specific lines</strong> of code (click the blue <strong>+</strong> next to a line number), plus <strong>one summary comment</strong> on the whole PR.
+<ul>
+<li>at least three comments in total; you do not need to leave 2 line comments per file.</li>
+</ul>
+</li>
+<li>Choose the <strong>Comment</strong> option when you submit, <span style="background-color: #fbeeb8;">NOT <strong>Approve</strong> and NOT <strong>Request changes</strong></span>. Those two belong to that team's own workflow: their PRs need approvals from their own teammates, and an outside approval interferes with how their PR reports are graded. Using Approve or Request changes will cost you the points for this step.</li>
+<li>Every comment must be <strong>specific and actionable.</strong> "Looks good" and "bad naming" earn nothing. "<em>This method is doing three things at once; pulling the validation into its own method would make the happy path easier to read</em>" is a review comment.</li>
+<li>Be kind and professional. Critique the code, never the person. Assume they were doing their best with the time they had.</li>
+</ul>
+</li>
+<li>
+<p><strong>Write up both reviews in your PDF</strong> using the questions in the next section, and record the feedback you received.</p>
+</li>
+</ol>
+<h2><strong><u>Questions to answer for each of the two PRs</u></strong></h2>
+<p>Answer each one in <strong>one or two complete sentences</strong>. One-word answers earn nothing. Use the <a class="external" href="https://google.github.io/styleguide/javaguide.html" target="_blank">Google Java style guide</a> and the <a class="external" href="https://kotlinlang.org/docs/coding-conventions.html" target="_blank">Kotlin coding conventions</a> to inform your answers, and the team's own <code>docs/openapi.yaml</code> for the API questions.</p>
+<p><strong>About the process:</strong></p>
+<ul>
+<li>Does the PR say which <strong>issue</strong> it addresses?</li>
+<li>Does it have <strong>reviewers assigned</strong> on GitHub?</li>
+<li>What <strong>tests</strong> were written, and are they passing?</li>
+<li>What <strong>changes</strong> does this PR actually make?</li>
+</ul>
+<p><strong>About the API</strong> (skip any that do not apply to this PR):</p>
+<ul>
+<li><strong>Contract:</strong> does the code match the team's <code>docs/openapi.yaml</code> (paths, verbs, request and response bodies)? Name any place it drifts.</li>
+<li><strong>Status codes and errors:</strong> does it return the documented status codes (201 + <code>Location</code> on create, 204 on delete, 404 for a missing resource) and the team's one error body (Problem Details)?</li>
+<li><strong>Security:</strong> are protected endpoints actually protected, and are admin-only routes restricted to admins?</li>
+</ul>
+<p><strong>About the code:</strong></p>
+<ul>
+<li><strong>Design:</strong> is the code well designed for what it has to do?</li>
+<li><strong>Functionality:</strong> does it appear to do what it claims?</li>
+<li><strong>Complexity:</strong> could it be made simpler, or is anything over-engineered?</li>
+<li><strong>Naming:</strong> are the names of classes, methods, and variables clear?</li>
+<li><strong>Comments:</strong> are there comments, and do they explain <em>why</em> rather than restate the code?</li>
+<li><strong>Style:</strong> does it follow the style guides linked above?</li>
+<li><strong>Documentation:</strong> is the repo's README good enough that a new person could build and run this (including Docker)? Is there Swagger / OpenAPI documentation?</li>
+</ul>
+<h2><strong><u>When you receive feedback</u></strong></h2>
+<p>Someone from another group is reviewing your work too. In your PDF, write down:</p>
+<ul>
+<li><strong>Who</strong> gave you feedback and what group they are in.</li>
+<li><strong>What</strong> the feedback actually said.</li>
+<li><strong>What you will do about it.</strong> I want to literally see the sentence "<em>With this feedback I will…</em>"
+<ul>
+<li>It must be something concrete. "I will keep doing what I am doing" and "I will do nothing" do not count.</li>
+<li>Everyone has something they can improve.</li>
+</ul>
+</li>
+</ul>
+<p><strong>If no one has reviewed your work by the end of class</strong>, that is not your fault and it does not cost you points. Instead: open your own most recent PR, review it against the same questions above, and write the "<em>With this feedback I will…</em>" sentence about what you found yourself. Say in your PDF that this is what you did and why.</p>
+<h2><strong><u>When something does not work</u></strong></h2>
+<p>These situations are normal. Work down this list in order and <strong>say in your PDF which step you had to use and why.</strong> Documenting the problem is worth full credit; silently skipping a review is not.</p>
+<ol>
+<li><strong>The person you were assigned has no pull requests, or only a trivial one.</strong> Review any other person in that same group who does have a usable PR.</li>
+<li><strong>Nobody in that whole group has a usable PR.</strong> Move to the next group in the rotation (keep counting in the same direction) and review the person at your position there.</li>
+<li><strong>The repo link is broken, private, or 404s.</strong> Message that team to ask for the correct link, then fall back to step 2 if they cannot fix it during class.</li>
+<li><strong>The groups page and the pairings page disagree.</strong> The pairings page wins.</li>
+<li><strong>Your team cannot agree on who reviews whom.</strong> Sort by last name and use your position, as described in step 2. That rule decides it, not negotiation.</li>
+</ol>
+<p>Two reviews is the target. If you genuinely can only complete one after working down this list, turn in the one you did and explain what blocked the second.</p>
+<h2><strong><u>Turn in</u></strong></h2>
+<p>One <strong>PDF</strong> containing:</p>
+<ul>
+<li>Your <strong>name</strong> and your <strong>group number</strong>.</li>
+<li>A note about <strong>which people your teammates reviewed</strong>, so I can see your group divided the work.</li>
+<li>For <strong>each</strong> of the two reviews:
+<ul>
+<li>A <strong>link to the repo</strong> and a <strong>link to the PR</strong>.</li>
+<li>A <strong>link to the review comments you left</strong> on GitHub. Get it by clicking the timestamp on your comment and copying the URL.</li>
+<li>A <strong>screenshot of your comments</strong> as they appear on the PR.</li>
+<li>Your <strong>answers to the questions</strong> above, in complete sentences.</li>
+</ul>
+</li>
+<li>The <strong>feedback you received</strong> and your "<em>With this feedback I will…</em>" sentence.</li>
+<li>Any <strong>fallback steps</strong> you had to use, and why.</li>
+</ul>
+<p><a class="external" href="https://docs.google.com/document/d/1e3q7k3O3V9MpHTYAELUmzM9OfPjKMZVNkkYmMjJXG7k/edit?usp=sharing" target="_blank"><span><u>Use this template</u></span><span class="external_link_icon" role="presentation"><span class="screenreader-only">Links to an external site.</span></span></a> and replace the [items] with your information.</p>
+<p>Links and screenshots are both required. A write-up with no links cannot be verified, and a write-up with no screenshot of your GitHub comments does not show you actually left the review.</p>

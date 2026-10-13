@@ -1,0 +1,111 @@
+<h2><strong><u>Goal</u></strong></h2>
+<p>Write a <strong>post mortem</strong> for Project 01: an honest look at what your team actually did, why things went the way they did, and what each of you carries into your next project.</p>
+<p>This is not the final submission for Project 01 and it is not documentation of how the app works. Those go in <strong>Project 01: Final Submission (GROUP)</strong>. This assignment is about the <em>process</em>.</p>
+<p><strong>Every teammate must contribute in writing.</strong> Part of this grade is the team's document and part of it is your own section, graded individually. If you write nothing, you lose your individual points and your team keeps theirs.</p>
+
+<h2><strong><u>Where the post mortem lives</u></strong></h2>
+<p>The post mortem is <strong>committed to your team repo</strong> as markdown, in a folder called <code>docs/postmortem/</code>. One shared team file, plus <strong>one file per person, committed by that person</strong>:</p>
+<pre>docs/postmortem/00_team.md        &lt;- the team writes this together
+docs/postmortem/rivera.md         &lt;- one file per member, named by last
+docs/postmortem/okafor.md            name, in lower case, committed by
+docs/postmortem/nguyen.md            that member
+docs/postmortem/kowalski.md</pre>
+<p>So if your last name is Nguyen, you create and commit <code>docs/postmortem/nguyen.md</code>. Hyphenated last names keep the hyphen.</p>
+<p>Two reasons it works this way. One file per person means you will not fight merge conflicts while writing. And the commit history is how I can see that everyone contributed, so <strong>commit your own file yourself</strong> rather than sending your text to a teammate to paste in.</p>
+<p>Then <strong>one</strong> member exports the whole thing to a single PDF and submits it here. One submission covers the group.</p>
+
+<h2><strong><u>What goes in the team file</u></strong></h2>
+<p>In <code>docs/postmortem/00_team.md</code>, written together:</p>
+<ol>
+    <li><strong>Context.</strong> One paragraph: what you set out to build, and what actually shipped.</li>
+    <li><strong>By the numbers.</strong> Real counts from your repo, with links:
+        <ul>
+            <li>Issues opened, and how many closed</li>
+            <li>Pull requests opened, and how many merged</li>
+            <li>Stories or issues you planned at the start, against how many are done</li>
+        </ul>
+        <p>Go look these up. Estimates and round numbers read as guesses, and I can check.</p>
+    </li>
+    <li><strong>What went well.</strong> Two or three specific things. "Good teamwork" is not specific. "We set up the Room database early, so the UI work was never blocked on it" is.</li>
+    <li><strong>What went wrong.</strong> Two or three things, and for each one <strong>why it happened</strong>. The cause is the point, not the complaint.
+        <ul>
+            <li>Keep it <strong>blameless</strong>: critique decisions, processes and tooling, not teammates. "Nobody reviewed PRs for four days" is a process problem. "Alex is lazy" is not analysis, and it will cost you points.</li>
+            <li>"We missed the deadline because we ran out of time" is a restatement, not a cause. Why did you run out of time?</li>
+        </ul>
+    </li>
+    <li><strong>Advice to our next teams.</strong> Two or three things you would tell the teams you are each about to join. You are being reshuffled for Project 02, so this is the part that outlives this team.</li>
+</ol>
+
+<h2><strong><u>What goes in your own file</u></strong></h2>
+<p>In <code>docs/postmortem/&lt;yourlastname&gt;.md</code>, written and committed by you:</p>
+<ol>
+    <li><strong>Your links.</strong> Your merged pull requests and your issues. Yours, not the team's.</li>
+    <li><strong>Your role.</strong> What did you actually build?</li>
+    <li><strong>Your biggest challenge.</strong> What was it, why was it hard, and how did you handle it?</li>
+    <li><strong>The most valuable thing you learned.</strong></li>
+    <li><strong>Two commitments you carry into Project 02.</strong> Project 02 has new groups, so your team's habits do not transfer but you do. Name two things <em>you personally</em> will do differently, and for each one say <strong>how you will know it worked</strong>.
+        <p><strong>Start from the feedback your teammates gave you</strong> in the Final Teammate Review, which I will have sent you. If you are dismissing a piece of it, say so and say why. That is a legitimate answer; ignoring it silently is not.</p>
+        <ul>
+            <li>Good: "I will open an issue before I start coding, and I will know it worked if every P2 pull request I open links to an issue that existed first."</li>
+            <li>Not good: "I will communicate better." There is no way to tell if that happened.</li>
+        </ul>
+        <p>You will be asked about these again at the Project 02 midpoint retrospective.</p>
+    </li>
+</ol>
+
+<h2><strong><u>Skeleton to copy</u></strong></h2>
+<p>Paste this into your files and fill it in.</p>
+<pre># Project 01 Post Mortem - [team / repo name]
+
+## Context
+[What we set out to build. What actually shipped.]
+
+## By the numbers
+- Issues opened: [n] ([link]) | closed: [n]
+- Pull requests opened: [n] ([link]) | merged: [n]
+- Planned at kickoff: [n] stories | done: [n]
+
+## What went well
+1. [Specific thing, and why it helped]
+
+## What went wrong
+1. [Specific thing] - Cause: [why it actually happened]
+
+## Advice to our next teams
+1. [What you would tell the team you are about to join]
+</pre>
+<pre># [Your Name] - Project 01 Retrospective
+
+## My work
+- Merged PRs: [links]
+- My issues: [links]
+- What I built: [your role]
+
+## Biggest challenge
+[What it was, why it was hard, how you handled it]
+
+## Most valuable thing I learned
+[...]
+
+## What I carry into Project 02
+1. [Commitment] - I will know it worked if [check]
+2. [Commitment] - I will know it worked if [check]
+</pre>
+
+<h2><strong><u>How this is graded</u></strong></h2>
+<p>See the rubric. Two things to know about how it works:</p>
+<ul>
+    <li>The <strong>[TEAM]</strong> rows are the same for everyone in the group.</li>
+    <li>The <strong>[YOU]</strong> rows are graded <strong>per person</strong>, from your own file and your own commit. Teammates can receive different grades on this assignment.</li>
+</ul>
+<p>Your teammates' feedback about you comes from the <strong>Project 01 SOLO: Final Teammate Review</strong>. I send it to you with names removed, along with how your self-ratings compared to theirs. Their ratings do not change your score on this assignment or on that one. What they wrote is the raw material for your commitments below.</p>
+
+<h2><strong><u>Turn in</u></strong></h2>
+<ul>
+    <li><strong>In the repo:</strong> <code>docs/postmortem/00_team.md</code> plus one file per member, each committed by that member.</li>
+    <li><strong>In Canvas:</strong> one PDF of the whole post mortem, submitted by one member for the group. The PDF must include a link to your repo.</li>
+</ul>
+<p>Canvas will only accept a PDF here.</p>
+
+<h4><span>CLOs addressed:</span></h4>
+<p><span>CLO1:G, CLO4:CDE, CLO5:AB</span></p>
