@@ -1,0 +1,11 @@
+# This repo is PUBLIC. Instructor-only material belongs in cst438-faculty (private).
+# Student data (rosters, groups, pairings, submissions, grades) never goes in any repo.
+*grading_rules*
+*design_decisions*
+*roster*
+*pairings*
+*_evidence.json
+canvas_subs.json
+_push/
+.DS_Store
+Icon?
