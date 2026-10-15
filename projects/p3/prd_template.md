@@ -3,8 +3,8 @@
 [Back to the Project 03 guide](README.md)
 
 > Copy this file to `docs/prd.md` in your team repo and replace everything in angle brackets.
-> Keep it to **one page**. Commit it **before the proposal presentation (Thu 11/5)**; the commit date is checked.
-> After 11/5, change it only through pull requests, so the history shows what changed and why.
+> Keep it to **one page**. Commit it **before the group proposal presentation**; the commit date is checked.
+> After the presentation, change it only through pull requests, so the history shows what changed and why.
 > Your Final Submission is graded against this document.
 
 **Team:** `<team name>` · **Repo:** `<link>` · **Last updated:** `<date>`

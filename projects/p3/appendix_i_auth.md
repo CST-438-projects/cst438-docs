@@ -126,9 +126,9 @@ On native Google the first eight steps are replaced by `GoogleSignin.signIn()` r
 
 ### 3.3 When to pick the broker instead
 
-A broker is an **escape hatch, not a starting point.** It is allowed only **after Sprint 2** (the 11/19 PR report) and only if both providers still do not work on web. Tell your instructor at the agile meeting, then switch to **Supabase Auth** (you may already have a Supabase project for the database) or Auth0. Enable Google and GitHub in the broker's dashboard, sign in with its JS SDK on web and native, and configure your API with `spring.security.oauth2.resourceserver.jwt.jwk-set-uri` pointing at the broker's JWKS and `issuer-uri` at its issuer.
+A broker is an **escape hatch, not a starting point.** It is allowed only **after Sprint 2** and only if both providers still do not work on web. Tell your instructor at the agile meeting, then switch to **Supabase Auth** (you may already have a Supabase project for the database) or Auth0. Enable Google and GitHub in the broker's dashboard, sign in with its JS SDK on web and native, and configure your API with `spring.security.oauth2.resourceserver.jwt.jwk-set-uri` pointing at the broker's JWKS and `issuer-uri` at its issuer.
 
-**What it costs:** the Final Submission rubric row *OAuth2 sign-in* (3 points) is capped at **1 of 3** for a team that uses a broker. You keep a working product and every other auth row (ownership, roles, deletion) is graded normally. Write the ADR either way: why you switched, and what you would need to switch back.
+**What it costs:** the Final Submission rubric row *OAuth2 sign-in* earns **reduced credit** for a team that uses a broker (see the rubric). You keep a working product and every other auth row (ownership, roles, deletion) is graded normally. Write the ADR either way: why you switched, and what you would need to switch back.
 
 ### 3.4 The Spring Boot pieces
 
@@ -658,15 +658,15 @@ Write this choice up as an ADR ("How e2e tests authenticate in CI") and record t
 
 ## 7. Sprint plan for auth, and the pitfalls checklist
 
-Dates match Canvas as of 2026-10-13; **Canvas is authoritative** if they ever disagree. Each sprint ends with a PR report: the PR is open by **2:00 AM** on the due day and reviewed and merged by **10:00 AM** (the 8-hour rule from P2). No class the week of 11/23.
+Dates are in **Canvas**. Each sprint ends with a PR report under the Project 02 review-window rule: the PR is opened early enough for the team to review it before the merge deadline.
 
 | When | Auth deliverable | Evidence |
 |---|---|---|
-| **Setup, 10/27–11/5** (proposal presentation Thu 11/5) | Team GitHub org and **public** repo created (never in `CST-438-projects`); Google Cloud project with Google Auth Platform configured (External, scopes `openid email profile` only), a **Web** client, an **Android** client; one GitHub OAuth App with the dev callbacks; `scheme` chosen; one teammate has `npx expo run:android` working; secrets in `.env` files that are git-ignored, with `.env.example` committed | Screenshot-free: `app.json` has `scheme`; `.env.example` lists every variable in section 3.4 |
-| **Sprint 1, 11/5–11/12** (PR report Thu 11/12) | **Web login with GitHub → API mints JWT → one protected endpoint** returns 200 with the token and 401 without; `users`/`identities` tables; CORS working from `localhost:8081`; MockMvc tests for 401/403/200; auth sequence diagram in `/docs` | `POST /auth/github` and `GET /me` in `openapi.yaml`; CI green |
-| **Sprint 2, 11/12–11/19** (PR report Thu 11/19) | **Android dev build** signing in with GitHub via `yourapp://auth`; **Google** on web (code exchange) and on Android (`google-signin` + `{idToken}`); the required email rule from 3.5 with unit tests; every teammate's SHA-1 registered; logout. Last point at which a team may switch to a broker (3.3). | Demo both providers on both platforms at the agile meeting; `AccountLinkerTest` |
-| **Sprint 3, 11/19–12/3** (break week of 11/23; PR report Thu 12/3) | `e2e` profile + Playwright signed-in test in CI; roles (`ADMIN`) with 403 tests; delete account; production: Render env vars set, prod redirect URIs registered, HTTPS web build signs in against the live API | CI runs Playwright; live URL works |
-| **Sprint 4, 12/3–12/8** (PR report and dry run Tue 12/8) | Polish and the ADRs (provider choice, architecture, e2e auth); stretch: account linking; iOS simulator if a Mac is available; do **not** start new required auth features | Dry run 12/8; Final Submission Wed 12/9 11:59 PM; presentation Thu 12/10 |
+| **Setup** (through the proposal presentation) | Team GitHub org and **public** repo created (never in `CST-438-projects`); Google Cloud project with Google Auth Platform configured (External, scopes `openid email profile` only), a **Web** client, an **Android** client; one GitHub OAuth App with the dev callbacks; `scheme` chosen; one teammate has `npx expo run:android` working; secrets in `.env` files that are git-ignored, with `.env.example` committed | Screenshot-free: `app.json` has `scheme`; `.env.example` lists every variable in section 3.4 |
+| **Sprint 1** | **Web login with GitHub → API mints JWT → one protected endpoint** returns 200 with the token and 401 without; `users`/`identities` tables; CORS working from `localhost:8081`; MockMvc tests for 401/403/200; auth sequence diagram in `/docs` | `POST /auth/github` and `GET /me` in `openapi.yaml`; CI green |
+| **Sprint 2** | **Android dev build** signing in with GitHub via `yourapp://auth`; **Google** on web (code exchange) and on Android (`google-signin` + `{idToken}`); the required email rule from 3.5 with unit tests; every teammate's SHA-1 registered; logout. Last point at which a team may switch to a broker (3.3). | Demo both providers on both platforms at the agile meeting; `AccountLinkerTest` |
+| **Sprint 3** | `e2e` profile + Playwright signed-in test in CI; roles (`ADMIN`) with 403 tests; delete account; production: Render env vars set, prod redirect URIs registered, HTTPS web build signs in against the live API | CI runs Playwright; live URL works |
+| **Sprint 4** (ends with the dry run) | Polish and the ADRs (provider choice, architecture, e2e auth); stretch: account linking; iOS simulator if a Mac is available; do **not** start new required auth features | Dry run; Final Submission; final presentation |
 
 ### Pitfalls checklist
 

@@ -46,26 +46,24 @@ your Project 02 team.
 
 ---
 
-## Schedule
+## Milestones
 
-**Canvas is authoritative.** If a date here disagrees with Canvas, Canvas wins.
+Dates and point values live in **Canvas**, not in this guide. In order:
 
-| When | What |
-|---|---|
-| Sun 10/25 | SOLO proposal (your own product idea) |
-| Thu 10/29 | Init meeting: new teams, pick a product |
-| Thu 11/5 | GROUP proposal presentation; `docs/prd.md` committed before class |
-| Thu 11/12 | Iteration 1 PR report (Sprint 1 ends) |
-| Thu 11/19 | Iteration 2 PR report (Sprint 2 ends); last point to switch to an auth broker |
-| Week of 11/23 | Break, no class |
-| Thu 12/3 | Iteration 3 PR report (Sprint 3 ends); team quiz #1; onboarding test |
-| Tue 12/8 | Iteration 4 PR report; **dry run**: scenario card and PR walkthroughs |
-| Wed 12/9, 11:59 PM | **Final Submission** (tagged release URL) |
-| Thu 12/10 | **Final presentations**; team quiz #2 |
+1. **SOLO proposal:** your own product idea.
+2. **Init meeting:** new teams form and pick a product.
+3. **GROUP proposal presentation:** `docs/prd.md` committed before class.
+4. **Sprints 1–4**, each ending with a PR report and an agile meeting.
+   * End of Sprint 2: the last point to switch to an auth broker.
+   * End of Sprint 3: team quiz #1 and the onboarding test.
+   * End of Sprint 4: the **dry run** (scenario card and PR walkthroughs).
+5. **Final Submission:** the tagged release URL, before the final presentation.
+6. **Final presentation:** team quiz #2.
 
-**PR reports follow the Project 02 rule.** The PR is **open by 2:00 AM** on the due day and
-reviewed and merged by **10:00 AM** (grace to 10:30). A PR opened later loses the review-window
-point; a requested reviewer who never reviews loses the reviewer point.
+**PR reports follow the Project 02 review-window rule.** The PR is opened early enough to leave
+the team the full review window before the merge deadline (both times are in Canvas). A PR opened
+late loses the review-window credit; a requested reviewer who never reviews loses the reviewer
+credit.
 
 ---
 
@@ -83,7 +81,7 @@ point; a requested reviewer who never reviews loses the reviewer point.
 * A **monorepo** (`api/`, `app/`, `docs/`, plus `compose.yml` at the root) is recommended. It makes
   `docker compose up`, CI and the onboarding test simpler. Two repos are allowed if you keep the
   `docs/` folder in one place and link it from the other.
-* Turn on branch protection for `main` in Week 1: pull requests required, required approvals,
+* Turn on branch protection for `main` before the first PR: pull requests required, required approvals,
   required status checks.
 
 ### Hosting: free tiers only
@@ -108,10 +106,10 @@ at least two other resource types, and meaningful relationships between them.
 
 ### The PRD comes first
 
-Copy the [PRD template](prd_template.md) to `docs/prd.md` and commit it **before the 11/5
+Copy the [PRD template](prd_template.md) to `docs/prd.md` and commit it **before the group
 proposal presentation**. It is one page with five sections: **users, problem, success measures,
 scope (MVP, vertical slice, not building), and user stories with Given/When/Then acceptance
-criteria.** After 11/5, change it only through pull requests.
+criteria.** After the presentation, change it only through pull requests.
 
 ### MVP and vertical slice
 
@@ -206,14 +204,14 @@ All of this lives in `docs/` in your repo.
 
 | File | What it contains | Due |
 |---|---|---|
-| `docs/prd.md` | The PRD ([template](prd_template.md)) | Before 11/5 |
+| `docs/prd.md` | The PRD ([template](prd_template.md)) | Before the proposal presentation |
 | `docs/architecture.md` | Context and container diagrams (C4 levels 1–2; Mermaid is fine) showing the API, web client, Android client, database and both providers | Sprint 1 |
 | `docs/adr/` | **Three ADRs**, and **one of them superseded** by a later ADR. Good candidates: how e2e tests authenticate (forced by the Playwright requirement), web token storage, release/deploy strategy, broker or not | Sprints 1–4 |
 | `docs/security.md` | The threat model (see [Security](#security)) | Sprint 2 |
 | `docs/runbook.md` | Deploy, roll back, rotate a secret, find logs, DB unreachable | Sprint 3 |
 | `docs/captains.md` | Merge captain rotation (see [Agile Process](#agile-process-and-the-merge-captain)) | Sprint 1 |
 | `docs/retro/` | One short retro per sprint with planned-versus-done numbers | Each sprint |
-| `docs/demo.md` | Your demo script for 12/10 | Sprint 4 |
+| `docs/demo.md` | Your demo script for the final presentation | Sprint 4 |
 | `README.md` | What it is, how to run it locally from a fresh clone, how to run the tests, live URLs | Always current |
 
 A superseded ADR is not a mistake; it is evidence that you revisited a decision. Its replacement
@@ -296,8 +294,8 @@ Same as Project 02, plus one role.
 
 ## Onboarding Test
 
-On **Thu 12/3**, each team is paired with another team (pairings are posted in Canvas). With only
-the README and runbook, the visiting team has **20 minutes** to clone your repo, run
+At the end of Sprint 3, each team is paired with another team (pairings are posted in Canvas). With only
+the README and runbook, the visiting team has a short timebox (set in class) to clone your repo, run
 `docker compose up`, reach a working local stack, and run your test suite.
 
 * Everything that blocks them goes into your repo as a GitHub issue labeled `onboarding`. If nothing
@@ -311,7 +309,7 @@ the README and runbook, the visiting team has **20 minutes** to clone your repo,
 
 ## Dry Run, Scenario Cards, and Final Presentation
 
-### Tue 12/8: dry run
+### Dry run (end of Sprint 4)
 
 1. **Demo run-through** against the production URL, with feedback you can still act on.
 2. **Scenario card.** You draw one card and perform it live on production. The full deck is
@@ -322,10 +320,10 @@ the README and runbook, the visiting team has **20 minutes** to clone your repo,
    * Revoke a user's **admin** role and show the 403.
    * A secret has leaked: walk through **rotating** it using your runbook.
    * The database is unreachable: show what the user sees and what your runbook says to do.
-3. **PR walkthroughs.** Each member is handed one of their own merged PRs and has three minutes to
+3. **PR walkthroughs.** Each member is handed one of their own merged PRs and a few minutes to
    explain what it does, why it was built that way, and which test covers it.
 
-### Thu 12/10: final presentation
+### Final presentation
 
 * The demo runs against the **production URL**, starting from a fresh account created live, on web
   and on Android.
@@ -341,8 +339,8 @@ You can use any tool you like to write code. You must be able to explain the cod
 
 * **Your merged PRs:** substantive, with commits you authored, spread across the sprints.
 * **Your reviews:** submitted on teammates' PRs, engaging the code rather than only approving.
-* **PR walkthrough** at the 12/8 dry run (above).
-* **Team quiz**, twice (12/3 and 12/10). Each team gets its own short Canvas quiz about its own
+* **PR walkthrough** at the dry run (above).
+* **Team quiz**, twice (end of Sprint 3 and the final presentation). Each team gets its own short Canvas quiz about its own
   repo: for example, which endpoint paginates, who was merge captain in Sprint 2, what the runbook
   says to do when the database is unreachable, which PR added the ownership tests. Questions are
   drafted from your repo and approved by the instructor before release. If you have been reading
@@ -352,28 +350,26 @@ You can use any tool you like to write code. You must be able to explain the cod
 
 ## Grading: Final Submission Rubric
 
-The Final Submission is 100 points, due **Wed 12/9 at 11:59 PM**. Submit the URL of your tagged
-release. **[TEAM]** rows are shared by the team; **[INDIVIDUAL]** rows are graded per student. The
-importable rubric is [`rubrics/p3_final_submission_rubric.csv`](rubrics/p3_final_submission_rubric.csv).
+Submit the URL of your tagged release. Points and the due date are in Canvas, and the importable
+rubric is [`rubrics/p3_final_submission_rubric.csv`](rubrics/p3_final_submission_rubric.csv).
+**[TEAM]** rows are shared by the team; **[INDIVIDUAL]** rows are graded per student.
 
-| Category | Rows | Points |
-|---|---|---|
-| [TEAM] Carry-forward floor from P2 | Contract-first, Docker/compose, CI with coverage gate, integration tests; credential gate | 8 |
-| [TEAM] Product definition | PRD before 11/5, acceptance criteria linked from issues, product-specific MVP and not-building list, planned vs shipped | 10 |
-| [TEAM] Architecture and design | Architecture doc, three ADRs with one superseded, design-review issues answered | 6 |
-| [TEAM] Implementation | API (6), web client vertical slice and error states (5), Android client against the live API (3) | 14 |
-| [TEAM] Authentication and authorization | OAuth2 sign-in with both providers from both clients (3; broker capped at 1), ownership, admin role and account deletion (3) | 6 |
-| [TEAM] Testing | Unit and ownership tests (6), Playwright e2e with axe in CI (6), client Jest tests (2) | 14 |
-| [TEAM] Security and operations | gitleaks, Dependabot and threat model (6), releases and runbook (4) | 10 |
-| [TEAM] Process | Merge captain rotation (3), issues and sprint retros (5) | 8 |
-| [TEAM] Documentation and onboarding | Onboarding test passed, `onboarding` issues resolved, README, API docs, demo script | 6 |
-| [TEAM] Dry run and final presentation | Live demo on production with planned vs shipped (5), scenario card at the 12/8 dry run (3) | 8 |
-| [INDIVIDUAL] | Merged PRs (4), reviews (2), PR walkthrough (2), team quiz (2) | 10 |
-| **Total** | | **100** |
+| Category | What is graded |
+|---|---|
+| [TEAM] Carry-forward floor from P2 | Contract-first, Docker/compose, CI with coverage gate, integration tests; credential gate |
+| [TEAM] Product definition | PRD before the proposal presentation, acceptance criteria linked from issues, product-specific MVP and not-building list, planned vs shipped |
+| [TEAM] Architecture and design | Architecture doc, three ADRs with one superseded, design-review issues answered |
+| [TEAM] Implementation | API, web client vertical slice and error states, Android client against the live API |
+| [TEAM] Authentication and authorization | OAuth2 sign-in with both providers from both clients (a broker earns reduced credit), ownership, admin role and account deletion |
+| [TEAM] Testing | Unit and ownership tests, Playwright e2e with axe in CI, client Jest tests |
+| [TEAM] Security and operations | gitleaks, Dependabot and threat model; releases and runbook |
+| [TEAM] Process | Merge captain rotation, issues and sprint retros |
+| [TEAM] Documentation and onboarding | Onboarding test passed, `onboarding` issues resolved, README, API docs, demo script |
+| [TEAM] Dry run and final presentation | Live demo on production with planned vs shipped; scenario card at the dry run |
+| [INDIVIDUAL] | Merged PRs, reviews, PR walkthrough, team quiz |
 
-Account linking earns no points; it is a stretch goal you may show off. The weekly agile meetings,
-PR reports, proposal, code review, teammate reviews and retrospective are separate Canvas
-assignments.
+Account linking is a stretch goal and is not graded. The weekly agile meetings, PR reports,
+proposal, code review, teammate reviews and retrospective are separate Canvas assignments.
 
 ---
 
@@ -383,11 +379,14 @@ See **[appendix_i_auth.md](appendix_i_auth.md)**: why OAuth is hard in React Nat
 setup, the backend token exchange in Spring Boot, the Expo client code, free development builds,
 testing auth in CI, a sprint plan, and a pitfalls checklist.
 
-## Appendix II: Testing resources
+## Appendix II: Testing resources (thank you, Ahmed!)
 
-* **AAA pattern (Arrange, Act, Assert)**, ~10 min:
+* **The example code and notebook Ahmed used:**
+  https://github.com/AhmedTurkiii/software-testing/blob/main/Software-Testing.ipynb
+
+* **AAA pattern (Arrange, Act, Assert):**
   https://semaphore.io/blog/aaa-pattern-test-automation
-* **Setup and teardown in Jest**, ~15 min: https://jestjs.io/docs/setup-teardown
+* **Setup and teardown in Jest:** https://jestjs.io/docs/setup-teardown
 * **Playwright: getting started and authentication:** https://playwright.dev/docs/intro ·
   https://playwright.dev/docs/auth
 * **axe-core for Playwright:** https://playwright.dev/docs/accessibility-testing
