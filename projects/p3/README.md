@@ -38,7 +38,7 @@ your Project 02 team.
 9. [Security](#security)
 10. [Releases and Operations](#releases-and-operations)
 11. [Agile Process and the Merge Captain](#agile-process-and-the-merge-captain)
-12. [Onboarding Test](#onboarding-test)
+12. [Cross-Team Check-ins and the Onboarding Test](#cross-team-check-ins-and-the-onboarding-test)
 13. [Dry Run, Scenario Cards, and Final Presentation](#dry-run-scenario-cards-and-final-presentation)
 14. [Individual Accountability](#individual-accountability)
 15. [Grading: Final Submission Rubric](#grading-final-submission-rubric)
@@ -50,13 +50,15 @@ your Project 02 team.
 
 Dates and point values live in **Canvas**, not in this guide. In order:
 
-1. **SOLO proposal:** your own product idea.
-2. **Init meeting:** new teams form and pick a product.
-3. **GROUP proposal presentation:** `docs/prd.md` committed before class.
-4. **Sprints 1–4**, each ending with a PR report and an agile meeting.
+1. **Init meeting:** new teams form and pick a product.
+2. **GROUP proposal presentation:** what the team is building; `docs/prd.md` committed before class.
+3. **Sprints 1–4**, each ending with a PR report (the day before the meeting) and an agile meeting.
    * End of Sprint 2: the last point to switch to an auth broker.
-   * End of Sprint 3: team quiz #1 and the onboarding test.
-   * End of Sprint 4: the **dry run** (scenario card and PR walkthroughs).
+   * Mid-project: **cross-team check-in 1**, the [onboarding test](#check-in-1-onboarding-test).
+   * End of Sprint 3: team quiz #1.
+   * After Sprint 3: **cross-team check-in 2**, a code review of the paired team plus a follow-up on
+     its `onboarding` issues.
+4. **Dry run:** scenario card and PR walkthroughs.
 5. **Final Submission:** the tagged release URL, before the final presentation.
 6. **Final presentation:** team quiz #2.
 
@@ -292,9 +294,13 @@ Same as Project 02, plus one role.
 
 ---
 
-## Onboarding Test
+## Cross-Team Check-ins and the Onboarding Test
 
-At the end of Sprint 3, each team is paired with another team (pairings are posted in Canvas). With only
+Each team is paired with another team for two in-class check-ins (pairings are posted in Canvas).
+
+### Check-in 1: onboarding test
+
+At check-in 1, the pairs visit each other. With only
 the README and runbook, the visiting team has a short timebox (set in class) to clone your repo, run
 `docker compose up`, reach a working local stack, and run your test suite.
 
@@ -304,6 +310,12 @@ the README and runbook, the visiting team has a short timebox (set in class) to 
   you.
 * Both sides are graded: the visitors on the quality of their issues, the hosts on whether a
   stranger could run their project.
+
+### Check-in 2: code review and follow-up
+
+Same pairs. Each student reviews recent pull requests from the paired team (comment reviews only,
+as in Project 2), and the visitors confirm that the `onboarding` issues they filed were fixed or
+answered.
 
 ---
 
