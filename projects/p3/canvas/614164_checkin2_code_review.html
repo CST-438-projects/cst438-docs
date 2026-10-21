@@ -1,0 +1,70 @@
+<h2><strong><u>Goal</u></strong></h2>
+<p>Give a real code review on another team's Project 03 code, and check that the problems your team found at check-in 1 were fixed. By the end of class you will have left written, actionable feedback on two pull requests from your paired team, verified your team's <code>onboarding</code> issues, and recorded what you will do about the feedback you received.</p>
+<p><strong>This is a solo assignment.</strong> You do the reviews yourself and you turn in your own PDF, even though your team coordinates who reviews whom. Background is in the <strong>Cross-Team Check-ins and the Onboarding Test</strong> section of the Project 03 guide in <a href="https://github.com/CST-438-projects/cst438-docs/blob/main/projects/p3/README.md">cst438-docs</a>.</p>
+<h2><strong><u>What you are doing, in five steps</u></strong></h2>
+<ol>
+<li>
+<p><strong>Find your target team.</strong> It is the same team your team visited at check-in 1. The <a title="Project 03 : Groups, Repos, Etc." href="https://csumb.instructure.com/courses/34057/pages/project-03-groups-repos-etc">Project 03 Groups, Repos, Etc.</a> page lists the pairings and repos.</p>
+</li>
+<li>
+<p><strong>Find which people you review.</strong> Sort your own team's members <strong>alphabetically by last name</strong> and find your position. Sort the target team the same way. You review the person at <strong>your position</strong> and the person <strong>one after</strong> it.</p>
+<ul>
+<li>If the target team runs out, <strong>wrap to the top</strong> of its list. Example: you are 3rd and the target team has 3 people, so you review their 3rd and 1st.</li>
+<li>Two reviewers may land on the same author. That is fine.</li>
+</ul>
+</li>
+<li>
+<p><strong>Pick one pull request per person</strong> (two PRs total). Open or merged is fine. Pick a PR with real code in it (an endpoint, an auth or ownership check, a screen, a test suite, the release workflow), not a one-line config change or a docs-only PR. If the person has several, pick their largest recent one that nobody else on your team picked.</p>
+</li>
+<li>
+<p><strong>Leave your review on the pull request itself, on GitHub.</strong> This is the main deliverable. Open the PR, go to <strong>Files changed</strong>, and use <strong>Review changes</strong>.</p>
+<ul>
+<li>Leave <strong>at least two comments anchored to specific lines</strong> (the blue <strong>+</strong> next to a line number), plus <strong>one summary comment</strong> on the whole PR.</li>
+<li>Choose <strong>Comment</strong> when you submit, <span style="background-color: #fbeeb8;">NOT <strong>Approve</strong> and NOT <strong>Request changes</strong></span>. Those belong to the team's own merge workflow and its merge captain. Using either costs the points for this step.</li>
+<li>Every comment must be <strong>specific and actionable.</strong> "Looks good" and "bad naming" earn nothing. "<em>This handler loads the booking by id without checking it belongs to the caller; another user's id returns their booking</em>" is a review comment.</li>
+<li>Critique the code, never the person.</li>
+</ul>
+</li>
+<li>
+<p><strong>Follow up on the <code>onboarding</code> issues</strong> your team filed on this team at check-in 1. For each one, check whether it was fixed or answered (re-run the step if you can), then comment on the issue with what you found: "verified fixed", "answered", or "still blocks, here is the output". Split the issues among your teammates so each one is checked once.</p>
+</li>
+</ol>
+<h2><strong><u>Questions to answer for each of the two PRs</u></strong></h2>
+<p>Answer each in <strong>one or two complete sentences</strong>. One-word answers earn nothing. Use the <a class="external" href="https://google.github.io/styleguide/javaguide.html" target="_blank">Google Java style guide</a>, the team's <code>docs/openapi.yaml</code> and its <code>docs/prd.md</code>.</p>
+<p><strong>About the process:</strong></p>
+<ul>
+<li>Does the PR link the <strong>issue</strong> it closes, and does that issue trace to a PRD story?</li>
+<li>Were <strong>reviewers</strong> assigned, and was it merged by that sprint's merge captain or deputy?</li>
+<li>What <strong>tests</strong> came with it, and did CI pass?</li>
+<li>What <strong>changes</strong> does this PR actually make?</li>
+</ul>
+<p><strong>About correctness and security</strong> (skip any that do not apply):</p>
+<ul>
+<li><strong>Contract:</strong> does the code match <code>docs/openapi.yaml</code> (paths, verbs, bodies, status codes, Problem Details errors)?</li>
+<li><strong>Ownership:</strong> can one user read or change another user's resource through this code? Is there a test that proves they cannot?</li>
+<li><strong>Auth and secrets:</strong> are protected routes protected, admin routes limited to admins, and secrets kept out of the client and the repo?</li>
+<li><strong>Client:</strong> does the screen handle loading, empty and error states (401, 403, 404, 500)?</li>
+</ul>
+<p><strong>About the code:</strong> design, functionality, complexity, naming, comments (do they explain <em>why</em>?), and style.</p>
+<h2><strong><u>When you receive feedback</u></strong></h2>
+<p>Someone from another team is reviewing your PRs too. In your PDF, record <strong>who</strong> reviewed you, <strong>what</strong> they said, and a concrete sentence that begins "<em>With this feedback I will…</em>". "I will keep doing what I am doing" does not count.</p>
+<p>If no one reviewed your work by the end of class, that does not cost you points. Review your own most recent PR against the same questions, write the "<em>With this feedback I will…</em>" sentence about what you found, and say that is what you did.</p>
+<h2><strong><u>When something does not work</u></strong></h2>
+<p>Work down this list in order and <strong>say in your PDF which step you used and why.</strong></p>
+<ol>
+<li><strong>Your assigned person has no usable PR.</strong> Review the next person on the target team's list who does.</li>
+<li><strong>Nobody on the target team has a usable PR.</strong> Tell the instructor; you will be given another team.</li>
+<li><strong>The repo is private or 404s.</strong> Ask the team for the correct link, then fall back to step 2.</li>
+<li><strong>The pairings page and your math disagree.</strong> The pairings page wins.</li>
+</ol>
+<h2><strong><u>Turn in</u></strong></h2>
+<p>One <strong>PDF</strong> containing:</p>
+<ul>
+<li>Your <strong>name</strong>, your <strong>team number</strong> and the <strong>team you reviewed</strong>.</li>
+<li>A note about <strong>which people your teammates reviewed</strong>.</li>
+<li>For <strong>each</strong> of the two reviews: a link to the PR, a link to your review comments (click the timestamp on your comment and copy the URL), a screenshot of your comments on the PR, and your answers to the questions above.</li>
+<li>A link to each <code>onboarding</code> issue you followed up on, and what you found.</li>
+<li>The feedback you received and your "<em>With this feedback I will…</em>" sentence.</li>
+<li>Any fallback steps you used, and why.</li>
+</ul>
+<p>Links and screenshots are both required. A write-up with no links cannot be verified.</p>

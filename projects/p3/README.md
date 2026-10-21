@@ -296,11 +296,12 @@ Same as Project 02, plus one role.
 
 ## Cross-Team Check-ins and the Onboarding Test
 
-Each team is paired with another team for two in-class check-ins (pairings are posted in Canvas).
+Each team visits one team and hosts another for two in-class check-ins. Pairings are posted in Canvas and stay the
+same for both check-ins.
 
 ### Check-in 1: onboarding test
 
-At check-in 1, the pairs visit each other. With only
+At check-in 1, part of your team visits while the rest hosts, then you swap. With only
 the README and runbook, the visiting team has a short timebox (set in class) to clone your repo, run
 `docker compose up`, reach a working local stack, and run your test suite.
 
@@ -313,7 +314,7 @@ the README and runbook, the visiting team has a short timebox (set in class) to 
 
 ### Check-in 2: code review and follow-up
 
-Same pairs. Each student reviews recent pull requests from the paired team (comment reviews only,
+Same pairings. Each student reviews recent pull requests from the team they visited (comment reviews only,
 as in Project 2), and the visitors confirm that the `onboarding` issues they filed were fixed or
 answered.
 

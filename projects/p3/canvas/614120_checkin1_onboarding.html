@@ -1,0 +1,40 @@
+<h2><strong><u>Goal</u></strong></h2>
+<p>Find out whether a stranger can run your project from your documentation alone, and do the same for another team. A team that cannot be onboarded from its README is not ready to ship.</p>
+<p><strong>This is a group assignment, graded individually.</strong> The team turns in one submission. [TEAM] rubric rows are shared and [INDIVIDUAL] rows are graded per student. Requirements are in the <strong>Cross-Team Check-ins and the Onboarding Test</strong> section of the Project 03 guide in <a href="https://github.com/CST-438-projects/cst438-docs/blob/main/projects/p3/README.md">cst438-docs</a>.</p>
+<h2><strong><u>Who visits whom</u></strong></h2>
+<p>Each team visits one team and hosts one team. The <a title="Project 03 : Groups, Repos, Etc." href="https://csumb.instructure.com/courses/34057/pages/project-03-groups-repos-etc">Project 03 Groups, Repos, Etc.</a> page lists the pairings and every team's repo. The same pairings are used again at check-in 2.</p>
+<p>Split your team: some members visit while at least one member stays to host, then swap at the halfway call. Every member visits once and hosts once.</p>
+<h2><strong><u>Before class (hosts)</u></strong></h2>
+<ul>
+<li>Your repo is public and the default branch is the version you want tested.</li>
+<li>The README and <code>docs/runbook.md</code> explain how to clone, configure, run <code>docker compose up</code> and run the tests. Anything a visitor needs (an <code>.env.example</code>, seed data, test-only credentials) is in the repo or the README says where to get it. Real secrets never go in the repo.</li>
+<li>Create an <code>onboarding</code> label in your repo so visitors can use it.</li>
+</ul>
+<h2><strong><u>In class</u></strong></h2>
+<p><strong>Visitors</strong>, on your own laptops, using only the host team's README and runbook:</p>
+<ol>
+<li>Clone the repo and follow the documented steps (for example <code>git clone</code>, then <code>git switch</code> to the branch the README names, if it names one).</li>
+<li>Reach a working local stack with <code>docker compose up</code> and open the app or the API.</li>
+<li>Run the test suite.</li>
+<li>Keep a log of every command you ran and what happened. The timebox is set in class.</li>
+</ol>
+<p><strong>Hosts</strong> may answer questions out loud but may not touch the visitors' keyboards. If an answer was needed, the README was missing it, and that is an issue.</p>
+<h2><strong><u>Filing <code>onboarding</code> issues</u></strong></h2>
+<p>Visitors file every blocker as a GitHub issue in the <strong>host</strong> repo, labeled <code>onboarding</code>. One issue per problem. Each issue includes:</p>
+<ul>
+<li>The step in the README or runbook where it happened.</li>
+<li>The exact command and the exact output or error (paste text, not only a screenshot).</li>
+<li>What was expected instead.</li>
+<li>The visitor's OS and Docker version.</li>
+</ul>
+<p>If nothing blocked you, file one issue saying so, with the commands you ran. "It didn't work" is not an issue.</p>
+<p>Hosts: before the end of class, acknowledge every <code>onboarding</code> issue filed against you (assign an owner or reply with a plan). Before the Final Submission, fix or answer every one of them; that part is graded on the Final Submission.</p>
+<h2><strong><u>Turn in (one per team)</u></strong></h2>
+<p>A PDF or a text entry containing:</p>
+<ul>
+<li>Your team number, the team you visited and the team that visited you.</li>
+<li>Which members visited and which hosted in each half.</li>
+<li><strong>Issues you filed</strong> on the host team: a link to each one and the name of the visitor who filed it.</li>
+<li><strong>Issues filed on you</strong>: a link to each one, its owner, and whether the visitors reached a running stack and a green test run.</li>
+<li>The visitors' command log.</li>
+</ul>
