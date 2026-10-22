@@ -9,7 +9,6 @@ they are versioned and always available. **Dates live in Canvas**, not in these 
 | Project 2: Build a REST API | [projects/p2](projects/p2/README.md) |
 | Project 3: Ship a Product | [projects/p3](projects/p3/README.md) |
 
-Starter repos for each project are the `CST438_*` template repos in this org. Use **Use this template**
-on those; this repo is documentation only.
+This repo is documentation only. Teams create their own repos; each project guide says where.
 
 Each term is tagged (`fa26`, `sp27`, ...) so an older version of a prompt stays available.
