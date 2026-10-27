@@ -11,8 +11,8 @@ The rigor in this project comes from **depth, not size**. A small product that i
 tested end to end, secured, released and runnable by a stranger scores better than a large one
 that only works on one laptop. Four things are new compared to Project 02, and they are the point:
 
-1. **You define the product before you build it.** A one-page PRD with testable acceptance
-   criteria, committed before the proposal presentation. The final is graded against it.
+1. **You define the product before you build it.** A one-page product requirements document
+   (PRD) with testable acceptance criteria, committed before the proposal presentation. The final is graded against it.
 2. **Your system is tested the way a user uses it.** One Playwright test walks your vertical slice
    through the real web client and the real API in CI.
 3. **You operate what you ship.** Tagged releases, a runbook, a rotating merge captain, and a
@@ -107,6 +107,19 @@ A web-and-mobile product that solves a problem your team cares about. It must su
 at least two other resource types, and meaningful relationships between them.
 
 ### The PRD comes first
+
+A **product requirements document (PRD)** says *what* you are building and *why*, before anyone
+decides *how*. It names who the product is for, the problem it solves for them, how you will know
+it worked, and exactly what is in and out of scope. It does not describe classes, tables or
+frameworks; those belong in `docs/architecture.md` and your ADRs. In industry, a product manager
+writes the PRD and the engineers build against it. In this project your team plays both roles,
+and the PRD is the contract your Final Submission is graded against.
+
+The test of a good PRD: a stranger could read it and tell you which features count as done. Every
+user story ends in **acceptance criteria** written as *Given / When / Then*, for example: *Given I
+am signed in, when I book a room that is already booked for that hour, then I see "That room is
+taken" and no booking is created.* If you cannot write a test for a criterion, rewrite it until
+you can.
 
 Copy the [PRD template](prd_template.md) to `docs/prd.md` and commit it **before the group
 proposal presentation**. It is one page with five sections: **users, problem, success measures,
