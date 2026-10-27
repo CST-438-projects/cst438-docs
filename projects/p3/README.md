@@ -212,6 +212,7 @@ All of this lives in `docs/` in your repo.
 | `docs/security.md` | The threat model (see [Security](#security)) | Sprint 2 |
 | `docs/runbook.md` | Deploy, roll back, rotate a secret, find logs, DB unreachable | Sprint 3 |
 | `docs/captains.md` | Merge captain rotation ([template](captains_template.md); see [the merge captain and deputy](#the-merge-captain-and-deputy)) | Sprint 1 |
+| `docs/team_agreement.md` | Your team's PR deadline, review turnaround and channel ([template](team_agreement_template.md); see [the team agreement](#the-team-agreement)) | Sprint 1 |
 | `docs/retro/` | One short retro per sprint with planned-versus-done numbers | Each sprint |
 | `docs/demo.md` | Your demo script for the final presentation | Sprint 4 |
 | `README.md` | What it is, how to run it locally from a fresh clone, how to run the tests, live URLs | Always current |
@@ -320,6 +321,23 @@ member is captain at least once. On a team of three, someone is captain twice.
 to matching branches** and list only that sprint's captain and deputy (merging a PR counts as a
 push). Turn on **Do not allow bypassing the above settings** too, or every org owner can still
 merge. The outgoing captain updates the list when the sprint changes.
+
+### The team agreement
+
+The course deadlines are the outer limit: your PR is open by **2:00 AM Thursday** and reviewed and
+merged by **10:00 AM Thursday**. A team that aims for the last minute leaves the captain nothing to
+work with, so each team sets an **earlier** deadline of its own. Copy the
+[team agreement template](team_agreement_template.md) to `docs/team_agreement.md` and commit it in
+Sprint 1. It records:
+
+* **your team's PR deadline**, earlier than the course deadline (for example, Tuesday 9:00 PM);
+* how quickly a requested reviewer responds;
+* where the team talks (one channel) and how someone says they are out.
+
+Every PR report links to this file as it stood that sprint (a permalink to a commit, not to
+`main`). Missing the team's deadline does not cost points on your PR report; it comes up at the
+agile meeting and in teammate reviews. Missing the course deadline, or a PR that never merges, does
+cost points. Change the agreement only through a pull request.
 
 ---
 
