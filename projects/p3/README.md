@@ -211,7 +211,7 @@ All of this lives in `docs/` in your repo.
 | `docs/adr/` | **Three ADRs**, and **one of them superseded** by a later ADR. Good candidates: how e2e tests authenticate (forced by the Playwright requirement), web token storage, release/deploy strategy, broker or not | Sprints 1–4 |
 | `docs/security.md` | The threat model (see [Security](#security)) | Sprint 2 |
 | `docs/runbook.md` | Deploy, roll back, rotate a secret, find logs, DB unreachable | Sprint 3 |
-| `docs/captains.md` | Merge captain rotation (see [Agile Process](#agile-process-and-the-merge-captain)) | Sprint 1 |
+| `docs/captains.md` | Merge captain rotation ([template](captains_template.md); see [the merge captain and deputy](#the-merge-captain-and-deputy)) | Sprint 1 |
 | `docs/retro/` | One short retro per sprint with planned-versus-done numbers | Each sprint |
 | `docs/demo.md` | Your demo script for the final presentation | Sprint 4 |
 | `README.md` | What it is, how to run it locally from a fresh clone, how to run the tests, live URLs | Always current |
@@ -279,18 +279,47 @@ Same as Project 02, plus one role.
   each linked to its PRD story ID and attached to a sprint milestone.
 * All changes reach `main` through pull requests that reference an issue and carry the required
   approvals (two teammates who are not the author; one on a team of three).
-* **Merge captain.** `docs/captains.md` lists, for each sprint, one **captain** and one **deputy**,
-  rotating so every member is captain at least once. During that sprint **only the captain (or the
-  deputy, when the captain is out) clicks merge**. The captain:
-  * merges nothing without its required approvals,
-  * cuts that sprint's release,
-  * writes the *merge log* section of the team's PR report: what merged, what waited, and why.
+* **Merge captain:** one per sprint, rotating. See [the subsection below](#the-merge-captain-and-deputy).
 * **Penalties follow the Project 02 ruling.** A PR merged before its approvals costs the **author**
   the approvals point on their PR report and costs the **captain of record** the captain row for
   that sprint. Reviewers are never penalized for a merge they could not review. A merge by anyone
   other than the captain or deputy also costs the captain row.
 * **Sprint retros** in `docs/retro/` record planned versus done (stories and sizes), what carried
   over, and one change for the next sprint. Graded on honesty, not velocity.
+
+### The merge captain and deputy
+
+**Why the role exists.** On a real team, `main` is what ships, and someone is accountable for what
+goes into it and when. When everyone can click merge, PRs land half-reviewed, two people merge
+conflicting work in the same hour, and nobody can say what is in a release. The merge captain is a
+lightweight version of the release manager role: one person owns `main` for one sprint.
+
+**The rotation.** Copy the [captains template](captains_template.md) to `docs/captains.md` and
+commit it in Sprint 1. It names one **captain** and one **deputy** for each sprint, rotating so every
+member is captain at least once. On a team of three, someone is captain twice.
+
+**The captain, during their sprint:**
+
+* is the **only** person who clicks merge (the deputy stands in, below);
+* merges nothing without its required approvals and green checks, and does not merge their own PR
+  until it has its approvals like anyone else's;
+* decides the merge order when PRs conflict, and tells the author when a PR has to wait and why;
+* cuts that sprint's tagged release (see [Releases and Operations](#releases-and-operations));
+* writes a **merge log** section in **their own PR report** for that sprint: each PR that merged,
+  each PR that waited and why, and the release tag. Everyone else's PR report names who the captain
+  was.
+
+**The deputy, during the same sprint:**
+
+* merges only when the captain is **out**: the captain said in the team channel that they are
+  unavailable, or has not responded within the review window to a PR that is approved and green;
+* says so in the PR ("merging as deputy: captain out") so the merge log can record it;
+* checks the release notes before the captain cuts the release.
+
+**Enforce it in GitHub.** In the branch protection rule for `main`, turn on **Restrict who can push
+to matching branches** and list only that sprint's captain and deputy (merging a PR counts as a
+push). Turn on **Do not allow bypassing the above settings** too, or every org owner can still
+merge. The outgoing captain updates the list when the sprint changes.
 
 ---
 
