@@ -221,7 +221,7 @@ All of this lives in `docs/` in your repo.
 |---|---|---|
 | `docs/prd.md` | The PRD ([template](prd_template.md)) | Before the proposal presentation |
 | `docs/architecture.md` | Context and container diagrams (C4 levels 1–2; Mermaid is fine) showing the API, web client, Android client, database and both providers | Sprint 1 |
-| `docs/adr/` | **Three ADRs**, and **one of them superseded** by a later ADR. Good candidates: how e2e tests authenticate (forced by the Playwright requirement), web token storage, release/deploy strategy, broker or not | Sprints 1–4 |
+| `docs/adr/` | **Three ADRs** ([template](adr_template.md)), and **one of them superseded** by a later ADR. Good candidates: how e2e tests authenticate (forced by the Playwright requirement), web token storage, release/deploy strategy, broker or not | Sprints 1–4 |
 | `docs/security.md` | The threat model (see [Security](#security)) | Sprint 2 |
 | `docs/runbook.md` | Deploy, roll back, rotate a secret, find logs, DB unreachable | Sprint 3 |
 | `docs/captains.md` | Merge captain rotation ([template](captains_template.md); see [the merge captain and deputy](#the-merge-captain-and-deputy)) | Sprint 1 |
@@ -229,6 +229,10 @@ All of this lives in `docs/` in your repo.
 | `docs/retro/` | One short retro per sprint with planned-versus-done numbers | Each sprint |
 | `docs/demo.md` | Your demo script for the final presentation | Sprint 4 |
 | `README.md` | What it is, how to run it locally from a fresh clone, how to run the tests, live URLs | Always current |
+
+An **architecture decision record (ADR)** is a short file that records one significant technical
+decision: the context, the options, what you chose, and its consequences. Write it when you decide,
+so the reasoning survives after the people who made the decision have forgotten it.
 
 A superseded ADR is not a mistake; it is evidence that you revisited a decision. Its replacement
 must be dated later and reference the code PR that made the change.
