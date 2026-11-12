@@ -64,8 +64,9 @@ Dates and point values live in **Canvas**, not in this guide. In order:
 
 **PR reports follow the Project 02 review-window rule.** The PR is opened early enough to leave
 the team the full review window before the merge deadline (both times are in Canvas). A PR opened
-late loses the review-window credit; a requested reviewer who never reviews loses the reviewer
-credit.
+late loses the review-window credit. A requested reviewer loses the reviewer credit for skipping a PR
+that still needed an approval, or for reviewing no teammate PR all sprint. Requesting everyone is fine:
+once a PR has its approvals, nobody else owes it a review.
 
 ---
 
